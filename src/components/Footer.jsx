@@ -12,7 +12,7 @@ const Footer = () => {
                     {t('footer.disclaimer')}
                 </p>
                 <div style={{ marginTop: '2rem' }}>
-                    <a href="#" className="btn btn-secondary" style={{ fontSize: '0.9rem' }}>{t('footer.submit')}</a>
+                    <a href="https://github.com/juuunnnk/Recap-hub" target="_blank" rel="noopener noreferrer" className="btn btn-secondary" style={{ fontSize: '0.9rem' }}>{t('footer.submit')}</a>
                 </div>
             </div>
         </footer>
