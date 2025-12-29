@@ -4,15 +4,34 @@ import { useLanguage } from '../context/LanguageContext';
 const Header = () => {
     const { language, setLanguage, t } = useLanguage();
 
+    const handleShare = async () => {
+        const shareData = {
+            title: t('siteTitle'),
+            text: t('heroTitle'),
+            url: window.location.origin + window.location.pathname
+        };
+
+        try {
+            if (navigator.share) {
+                await navigator.share(shareData);
+            } else {
+                await navigator.clipboard.writeText(shareData.url);
+                alert('URL copied to clipboard!');
+            }
+        } catch (err) {
+            console.error('Error sharing:', err);
+        }
+    };
+
     return (
-        <header style={{ padding: 'var(--spacing-md) 0', borderBottom: '1px solid var(--border-color)' }}>
-            <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--spacing-xs)' }}>
-                    <div style={{ width: '24px', height: '24px', background: 'var(--accent-gradient)', borderRadius: '6px' }}></div>
-                    <span style={{ fontWeight: '700', fontSize: '1.25rem' }}>{t('siteTitle')}</span>
+        <header className="site-header">
+            <div className="container header-container">
+                <div className="site-logo">
+                    <div className="site-logo-icon" style={{ borderRadius: '6px' }}></div>
+                    <span className="site-title">{t('siteTitle')}</span>
                 </div>
-                <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
-                    <div style={{ display: 'flex', gap: '0.5rem', background: 'var(--bg-card)', padding: '4px', borderRadius: 'var(--radius-full)', border: '1px solid var(--border-color)' }}>
+                <div className="header-actions">
+                    <div className="lang-switcher" style={{ display: 'flex', gap: '0.25rem', background: 'var(--bg-card)', padding: '3px', borderRadius: 'var(--radius-full)', border: '1px solid var(--border-color)' }}>
                         <button
                             onClick={() => setLanguage('ja')}
                             style={{
@@ -21,7 +40,8 @@ const Header = () => {
                                 background: language === 'ja' ? 'var(--bg-secondary)' : 'transparent',
                                 color: language === 'ja' ? 'var(--text-primary)' : 'var(--text-secondary)',
                                 fontSize: '0.8rem',
-                                fontWeight: '600'
+                                fontWeight: '600',
+                                transition: 'all 0.2s'
                             }}
                         >
                             JA
@@ -34,13 +54,18 @@ const Header = () => {
                                 background: language === 'en' ? 'var(--bg-secondary)' : 'transparent',
                                 color: language === 'en' ? 'var(--text-primary)' : 'var(--text-secondary)',
                                 fontSize: '0.8rem',
-                                fontWeight: '600'
+                                fontWeight: '600',
+                                transition: 'all 0.2s'
                             }}
                         >
                             EN
                         </button>
                     </div>
-                    <button className="btn btn-secondary" style={{ fontSize: '0.9rem', padding: '0.5rem 1rem' }}>
+                    <button
+                        className="btn btn-secondary btn-share"
+                        style={{ fontSize: '0.9rem', padding: '0.5rem 1rem' }}
+                        onClick={handleShare}
+                    >
                         {t('share')}
                     </button>
                 </div>

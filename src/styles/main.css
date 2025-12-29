@@ -4,15 +4,17 @@
   --bg-secondary: #161616;
   --bg-card: #1c1c1c;
   --bg-blur: rgba(28, 28, 28, 0.7);
-  
+
   --text-primary: #ffffff;
   --text-secondary: #a1a1aa;
   --text-accent: #d4d4d8;
 
-  --accent-primary: #8b5cf6; /* Violet */
-  --accent-secondary: #ec4899; /* Pink */
+  --accent-primary: #8b5cf6;
+  /* Violet */
+  --accent-secondary: #ec4899;
+  /* Pink */
   --accent-gradient: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);
-  
+
   --border-color: #333333;
   --border-hover: #525252;
 
@@ -107,17 +109,109 @@ button {
   background: var(--bg-card);
 }
 
+/* Header Styles */
+.site-header {
+  padding: var(--spacing-md) 0;
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  background: var(--bg-blur);
+  backdrop-filter: blur(10px);
+  z-index: 100;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-logo {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.site-logo-icon {
+  width: 24px;
+  height: 24px;
+  background: var(--accent-gradient);
+  border-radius: 6px;
+}
+
+.site-title {
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+.header-actions {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+/* Mobile Header Optimizations */
+@media (max-width: 600px) {
+  .site-header {
+    padding: var(--spacing-xs) 0;
+  }
+
+  .site-title {
+    font-size: 1rem;
+  }
+
+  .site-logo-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .header-actions {
+    gap: 0.5rem;
+  }
+
+  .lang-switcher button {
+    padding: 2px 8px !important;
+    font-size: 0.7rem !important;
+  }
+
+  .btn-share {
+    padding: 0.4rem 0.8rem !important;
+    font-size: 0.8rem !important;
+  }
+}
+
 /* Grid Layouts */
-.grid-cols-1 { grid-template-columns: repeat(1, 1fr); }
-.grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
-.grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
-.gap-4 { gap: 1rem; }
-.gap-6 { gap: 1.5rem; }
+.grid-cols-1 {
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.grid-cols-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-cols-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.gap-4 {
+  gap: 1rem;
+}
+
+.gap-6 {
+  gap: 1.5rem;
+}
 
 /* Animation */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .animate-fade-in {
