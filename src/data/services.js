@@ -13,7 +13,9 @@ const parseServices = (csvText) => {
         provider: row.provider,
         category: row.category,
         status: row.status,
-        imageUrl: row.imageUrl,
+        imageUrl: row.imageUrl && row.imageUrl.startsWith('/')
+            ? `${import.meta.env.BASE_URL}${row.imageUrl.slice(1)}`
+            : row.imageUrl,
         link: row.link,
         content: {
             en: {
