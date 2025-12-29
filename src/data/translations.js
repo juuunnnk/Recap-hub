@@ -1,7 +1,6 @@
 export const translations = {
     ja: {
-        siteTitle: 'まとめのまとめ 2025',
-        metaDescription: '2025年の振り返りキャンペーン（Recap）をまとめてチェック。Spotify Wrapped, Apple Music Replay, Nintendo Year in Reviewなど、あなたの1年を振り返るためのリンク集です。',
+        siteTitle: 'Recap Hub 2025',
         heroTitle: '2025年を振り返ろう',
         heroSubtitle: '現在 {count} 個の振り返りキャンペーンが公開中',
         share: 'シェア',
@@ -34,8 +33,7 @@ export const translations = {
         emptyState: 'このカテゴリのキャンペーンはまだありません。'
     },
     en: {
-        siteTitle: 'The Recap of Recaps 2025',
-        metaDescription: 'The ultimate collection of your 2025 recaps. Links to Spotify Wrapped, Apple Music Replay, Nintendo Year in Review, and more, all in one place.',
+        siteTitle: 'Recap Hub 2025',
         heroTitle: 'Your 2025 Wrapped.',
         heroSubtitle: 'Discover and track {count} active recap campaigns.',
         share: 'Share',
