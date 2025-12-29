@@ -1,6 +1,6 @@
 export const translations = {
     ja: {
-        siteTitle: 'Recap Hub 2025',
+        siteTitle: '年間まとめのまとめ',
         heroTitle: '2025年を振り返ろう',
         heroSubtitle: '現在 {count} 個の振り返りキャンペーンが公開中',
         share: 'シェア',
