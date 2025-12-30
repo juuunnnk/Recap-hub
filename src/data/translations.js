@@ -10,7 +10,13 @@ export const translations = {
             Gaming: 'ゲーム',
             Social: 'SNS',
             Finance: '金融',
-            Lifestyle: 'ライフスタイル'
+            Lifestyle: 'ライフスタイル',
+            Fitness: 'フィットネス',
+            Shopping: 'ショッピング',
+            'Food & Travel': 'フード＆トラベル',
+            Productivity: '生産性',
+            Education: '教育',
+            Books: '本'
         },
         status: {
             Active: '公開中',
@@ -43,7 +49,13 @@ export const translations = {
             Gaming: 'Gaming',
             Social: 'Social',
             Finance: 'Finance',
-            Lifestyle: 'Lifestyle'
+            Lifestyle: 'Lifestyle',
+            Fitness: 'Fitness',
+            Shopping: 'Shopping',
+            'Food & Travel': 'Food & Travel',
+            Productivity: 'Productivity',
+            Education: 'Education',
+            Books: 'Books'
         },
         status: {
             Active: 'Active',
